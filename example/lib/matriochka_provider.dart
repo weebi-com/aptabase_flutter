@@ -1,4 +1,3 @@
-import 'package:aptabase_flutter/aptabase_flutter.dart';
 import 'package:aptabase_flutter/persistence.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

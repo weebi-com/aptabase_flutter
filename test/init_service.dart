@@ -1,4 +1,4 @@
-import 'package:aptabase_flutter/src/offline_logic/services/events_service.dart';
+import 'package:aptabase_flutter/persistence.dart';
 import 'package:sembast/sembast.dart';
 
 class TestEventService {

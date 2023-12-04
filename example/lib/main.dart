@@ -13,9 +13,12 @@ import 'package:path/path.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Aptabase.init("A-DEV-0000000000");
-
-  runApp(const Directionality(
-      textDirection: TextDirection.ltr, child: EntryPointGetDirPath()));
+  runApp(
+    const Directionality(
+      textDirection: TextDirection.ltr,
+      child: EntryPointGetDirPath(),
+    ),
+  );
 }
 
 class EntryPointGetDirPath extends StatelessWidget {
@@ -56,7 +59,9 @@ class GetDb extends StatelessWidget {
     final dir = await getApplicationDocumentsDirectory();
 
     final path = join(dir.path, 'do_not_delete', 'aptabase');
-    return await dbFactory.openDatabase(path, mode: DatabaseMode.create);
+    final dbSembast =
+        await dbFactory.openDatabase(path, mode: DatabaseMode.create);
+    return dbSembast;
   }
 
   @override
@@ -121,9 +126,8 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
-  void _incrementCounter(EventsServiceSembast eventsService) {
-    Aptabase.instance
-        .trackEvent("increment", {"counter": _counter}, eventsService);
+  void _incrementCounter() {
+    Aptabase.instance.trackEvent("increment", {"counter": _counter});
     setState(() {
       _counter++;
     });
@@ -131,6 +135,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final eventsService =
+        Provider.of<EventsServiceSembast>(context, listen: false);
+    Aptabase.init("A-DEV-0000000000", null);
+    Aptabase.initPersistence(eventsService);
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
@@ -152,9 +161,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          final eventsService =
-              Provider.of<EventsServiceSembast>(context, listen: false);
-          _incrementCounter(eventsService);
+          _incrementCounter();
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),

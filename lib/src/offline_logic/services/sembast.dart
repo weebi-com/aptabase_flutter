@@ -1,6 +1,5 @@
-import 'package:aptabase_flutter/src/offline_logic/services/endpoint_base_abstract.dart';
 import 'package:aptabase_flutter/src/offline_logic/event_offline.dart';
-import 'package:aptabase_flutter/src/offline_logic/services/events_service_abstract.dart';
+import 'package:aptabase_flutter/src/offline_logic/services_asbtract/events_service_abstract.dart';
 import 'package:sembast/sembast.dart';
 
 class EventsServiceSembast extends EventsServiceAbstract {
@@ -67,5 +66,6 @@ class RemoveObsoleteLinesFromDb extends RemoveObsoleteLinesFromDbAbstract {
   @override
   Future<void> request(void _) async {
     await _db.compact();
+    return;
   }
 }
