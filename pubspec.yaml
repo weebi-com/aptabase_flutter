@@ -12,8 +12,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  package_info_plus: ^8.0.0
-  device_info_plus: ^10.1.0
+  package_info_plus: ^8.1.0
+  device_info_plus: ^11.1.0
   universal_io: ^2.2.0
   
   # if no connectivity persist data
