@@ -17,8 +17,8 @@ dependencies:
   universal_io: ^2.2.0
   
   # if no connectivity persist data
-  connectivity_plus: ^6.0.3 #4.0.2 #supports windows which is better than cross_connectivity
-  internet_connection_checker: ^1.0.0+1
+  connectivity_plus: ^7.0.0 #4.0.2 #supports windows which is better than cross_connectivity
+  internet_connection_checker_plus: ^2.5.2
   sembast: ^3.8.3
   
 
