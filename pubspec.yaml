@@ -1,25 +1,25 @@
 name: aptabase_flutter
 description: "Flutter SDK for Aptabase: Open Source Privacy-First and Simple Analytics for Mobile, Desktop and Web Apps"
-version: 0.1.1
+version: 0.1.2
 homepage: https://aptabase.com
 repository: https://github.com/aptabase/aptabase_flutter
 issue_tracker: https://github.com/aptabase/aptabase_flutter/issues
 
 environment:
   sdk: ">=3.3.0 <4.0.0"
-  flutter: ">=3.19.0"
+  flutter: ">=3.27.1"
 
 dependencies:
   flutter:
     sdk: flutter
-  package_info_plus: ^8.1.0
-  device_info_plus: ^11.1.0
+  package_info_plus: ^9.0.0
+  device_info_plus: ^12.2.0 #^11.1.0
   universal_io: ^2.2.0
   
   # if no connectivity persist data
   connectivity_plus: ^6.0.3 #4.0.2 #supports windows which is better than cross_connectivity
   internet_connection_checker: ^1.0.0+1
-  sembast: ^3.0.2
+  sembast: ^3.8.3
   
 
 dev_dependencies:

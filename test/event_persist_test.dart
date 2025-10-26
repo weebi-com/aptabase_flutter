@@ -1,7 +1,6 @@
 import 'package:aptabase_flutter/persistence.dart';
 import 'package:aptabase_flutter/src/offline_logic/event_offline.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:sembast/sembast.dart';
 import 'package:sembast/sembast_memory.dart';
 
 import 'init_service.dart';
